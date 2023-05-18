@@ -1,23 +1,23 @@
 module.exports = {
-    presets: ["@babel/preset-flow", "@babel/react", "@babel/preset-env"],
-    plugins: [
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-transform-modules-commonjs",
-        "react-native-web",
-        "lodash",
-    ],
-    env: {
-        build: {
-            presets: [
-                "@babel/react",
-                [
-                    "@babel/preset-env",
-                    {
-                        forceAllTransforms: true,
-                    },
-                ],
-            ],
-        },
+  presets: ["@babel/preset-flow", "@babel/react", "@babel/preset-env"],
+  plugins: [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-modules-commonjs",
+    "react-native-web",
+    "lodash",
+  ],
+  env: {
+    build: {
+      presets: [
+        "@babel/react",
+        [
+          "@babel/preset-env",
+          {
+            forceAllTransforms: true,
+          },
+        ],
+      ],
     },
+  },
 };
