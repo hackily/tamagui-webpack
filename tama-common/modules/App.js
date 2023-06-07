@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, styled, TamaguiProvider, YStack } from "tamagui";
 import config from "../tamagui.config";
+import { Circle } from "@hackily/tamagui";
 
 const TransparentInput = styled(Input, {
   borderColor: "transparent",
@@ -25,6 +26,7 @@ export default function Application() {
         <TransparentInput placeholder="transparent border 0px" />
         <Input placeholder="default input" />
       </YStack>
+      <Circle size={100} />
     </TamaguiProvider>
   );
 }

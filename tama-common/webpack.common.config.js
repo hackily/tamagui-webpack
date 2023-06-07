@@ -24,6 +24,7 @@ const getConfig = (serviceDir, port) => {
     path.resolve(serviceDir, "src"),
     path.resolve(serviceDir, "../tama-common"),
     path.resolve(serviceDir, "../node_modules/@tamagui"),
+    path.resolve(serviceDir, "../node_modules/@hackily/tamagui"),
   ];
   const config = {
     resolve: {
@@ -49,6 +50,16 @@ const getConfig = (serviceDir, port) => {
                   process.env.NODE_ENV === "development" &&
                     require.resolve("react-refresh/babel"),
                 ].filter(Boolean),
+              },
+            },
+            {
+              loader: "tamagui-loader",
+              options: {
+                config: "../tama-common/tamagui.config.js",
+                components: ["@hackily/tamagui", "tamagui"],
+                importsWhitelist: ["constants.js", "colors.js"],
+                logTimings: true,
+                disableExtractions: process.env.NODE_ENV === "development",
               },
             },
           ],
